@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotify Clone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="images.png" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+</head>
+<body>
+  <!-- Auth Screen -->
+  <div id="authScreen" class="auth-screen">
+    <div class="auth-box">
+      <h2>Welcome</h2>
+      <p>Login or create account to use Spotify Clone</p>
+
+      <input type="text" id="authName" placeholder="Full Name" />
+      <input type="email" id="authEmail" placeholder="Email Address" />
+      <input type="tel" id="authMobile" placeholder="Mobile Number" />
+      <input type="text" id="authUsername" placeholder="Enter username" />
+      <input type="password" id="authPassword" placeholder="Enter password" />
+
+      <label for="authPhoto" class="file-label">Upload Profile Image</label>
+      <input type="file" id="authPhoto" accept="image/*" />
+
+      <div class="auth-actions">
+        <button type="button" id="loginBtn" class="small-btn">Login</button>
+        <button type="button" id="signupBtn" class="small-btn">Sign Up</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main App -->
+  <div class="container" id="appContainer">
+    <aside class="leftside">
+      <img src="spotify-logo.png" alt="Spotify Logo" class="logo" />
+
+      <div class="profile-card">
+        <img id="profileImage" src="default-user.png" alt="Profile" class="profile-image" />
+        <div class="profile-info">
+          <h4 id="profileName">User</h4>
+          <p id="profileEmail">user@email.com</p>
+          <p id="profileMobile">+91 XXXXXXXXXX</p>
+        </div>
+      </div>
+
+      <div class="upper">
+        <button class="nav-btn active" id="homeBtn">
+          <span class="material-symbols-outlined">home</span>
+          <span>Home</span>
+        </button>
+
+        <button class="nav-btn" id="searchBtn">
+          <span class="material-symbols-outlined">search</span>
+          <span>Search</span>
+        </button>
+
+        <div class="search-box" id="searchBox">
+          <input type="text" id="searchInput" placeholder="Search songs, artists..." />
+        </div>
+      </div>
+
+      <div class="library">
+        <div class="library-header">
+          <h3>Your Library</h3>
+
+          <div class="library-actions">
+            <button id="createPlaylistBtn" class="small-btn">+ Playlist</button>
+            <button id="uploadSongBtn" class="small-btn">+ Song</button>
+            <button id="logoutBtn" class="small-btn logout-btn">Logout</button>
+          </div>
+
+          <input type="file" id="songUploader" accept="audio/*" multiple hidden />
+        </div>
+
+        <ul id="playlistList" class="playlist-list"></ul>
+
+        <h4 class="songs-title">All Songs</h4>
+        <ul id="songList" class="song-list"></ul>
+      </div>
+    </aside>
+
+    <main class="rightside" id="mainContent">
+      <section class="hero">
+        <h2>Welcome Back</h2>
+        <p>Play your favorite music</p>
+      </section>
+
+      <section id="homeSection">
+        <h3>Popular Artists</h3>
+        <div class="art" id="artistCards">
+          <div class="artists card-play" data-song="0">
+            <img src="3.png" alt="Pritam" />
+            <h4>Pritam</h4>
+            <span class="span">Artist</span>
+            <div class="play">
+              <span class="material-symbols-outlined playbutton">play_arrow</span>
+            </div>
+          </div>
+
+          <div class="artists card-play" data-song="1">
+            <img src="4.png" alt="Arijit Singh" />
+            <h4>Arijit Singh</h4>
+            <span class="span">Artist</span>
+            <div class="play">
+              <span class="material-symbols-outlined playbutton">play_arrow</span>
+            </div>
+          </div>
+
+          <div class="artists card-play" data-song="2">
+            <img src="1.png" alt="A.R. Rahman" />
+            <h4>A.R. Rahman</h4>
+            <span class="span">Artist</span>
+            <div class="play">
+              <span class="material-symbols-outlined playbutton">play_arrow</span>
+            </div>
+          </div>
+
+          <div class="artists card-play" data-song="3">
+            <img src="5.png" alt="Anirudh Ravichander" />
+            <h4>Anirudh Ravichander</h4>
+            <span class="span">Artist</span>
+            <div class="play">
+              <span class="material-symbols-outlined playbutton">play_arrow</span>
+            </div>
+          </div>
+        </div>
+
+        <h3>Popular Albums</h3>
+        <div class="art" id="albumCards">
+          <div class="artists card-play" data-song="0">
+            <img src="art.jpg" alt="Tum Se Hi" />
+            <h4>Tum Se Hi</h4>
+            <span class="span">Album</span>
+            <div class="play">
+              <span class="material-symbols-outlined playbutton">play_arrow</span>
+            </div>
+          </div>
+
+          <div class="artists card-play" data-song="1">
+            <img src="phir.jpeg" alt="Phir Bhi Tumko Chahunga" />
+            <h4>Phir Bhi Tumko Chahunga</h4>
+            <span class="span">Album</span>
+            <div class="play">
+              <span class="material-symbols-outlined playbutton">play_arrow</span>
+            </div>
+          </div>
+
+          <div class="artists card-play" data-song="2">
+            <img src="Ranj.jpg" alt="Raanjhanaa" />
+            <h4>Raanjhanaa</h4>
+            <span class="span">Album</span>
+            <div class="play">
+              <span class="material-symbols-outlined playbutton">play_arrow</span>
+            </div>
+          </div>
+
+          <div class="artists card-play" data-song="3">
+            <img src="kolaveri.jpg" alt="Why This Kolaveri" />
+            <h4>Why This Kolaveri!!!</h4>
+            <span class="span">Album</span>
+            <div class="play">
+              <span class="material-symbols-outlined playbutton">play_arrow</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="searchSection" class="hidden">
+        <h3>Search Results</h3>
+        <div id="searchResults" class="art"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="lowerside">
+    <audio id="audioPlayer"></audio>
+
+    <div class="now-playing">
+      <div id="nowPlayingTitle">No song selected</div>
+      <div id="nowPlayingArtist">-</div>
+    </div>
+
+    <div class="controls-wrapper">
+      <div class="controls">
+        <button id="shuffleBtn" title="Shuffle">
+          <span class="material-symbols-outlined">shuffle</span>
+        </button>
+
+        <button id="prevBtn" title="Previous">
+          <span class="material-symbols-outlined">skip_previous</span>
+        </button>
+
+        <button id="playPauseBtn" title="Play/Pause">
+          <span class="material-symbols-outlined">play_arrow</span>
+        </button>
+
+        <button id="nextBtn" title="Next">
+          <span class="material-symbols-outlined">skip_next</span>
+        </button>
+
+        <button id="repeatBtn" title="Repeat">
+          <span class="material-symbols-outlined">repeat</span>
+        </button>
+      </div>
+
+      <div class="progress-area">
+        <span id="currentTime">0:00</span>
+        <input type="range" id="seekBar" value="0" min="0" max="100" />
+        <span id="duration">0:00</span>
+      </div>
+    </div>
+
+    <div class="extra-controls">
+      <button id="muteBtn" title="Mute">
+        <span class="material-symbols-outlined">volume_up</span>
+      </button>
+      <input type="range" id="volumeBar" min="0" max="1" step="0.1" value="1" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
